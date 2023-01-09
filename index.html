@@ -38,7 +38,8 @@
     <div class="client">
         <br><br>
         <label style="font-size:25px; padding-left: 70px;">Search</label><br>
-        <span style="padding-left: 70px;"><input type="search" ng-model="count"></span>
+        <span style="padding-left: 70px;"><input type="search" ng-model="searchuser.name"></span>
+        <p style="color:gray; font: 15px; padding-left: 70px;">Enter only name in box</p>
         <br>
         <p style="color:gray; font: 15px; padding-left: 70px;"></p>
         <br><br>
@@ -52,7 +53,7 @@
                         <th>Phone No.</th>
                         <th>Mail Id</th>
                     </tr>
-                    <tr ng-repeat="u in jsondata">
+                    <tr ng-repeat="u in jsondata | filter:searchuser">
                         <td>{{u.id}}</td>
                         <td>{{u.name}}</td>
                         <td>{{u.gender}}</td>
